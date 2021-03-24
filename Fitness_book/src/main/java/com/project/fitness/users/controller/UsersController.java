@@ -59,4 +59,26 @@ public class UsersController {
 		return usersService.checkNick(user_nick);
 	}
 	
+	@RequestMapping(value="/users/login")
+	public ModelAndView login(HttpServletRequest req, UsersDto dto, ModelAndView mView) {
+		
+		usersService.login(req, dto);
+		
+		mView.setViewName("users/login");
+		
+		return mView;
+	}
+	
+	@RequestMapping(value="/users/private/logout")
+	public ModelAndView logout(HttpServletRequest req, ModelAndView mView) {
+		
+		req.getSession().invalidate();
+		
+		mView.setViewName("users/private/logout");
+		
+		return mView;
+	}
+	
+	
+	
 }

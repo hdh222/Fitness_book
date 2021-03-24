@@ -7,6 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>FitnessBook</title>
+<style>
+	p>strong>a{
+		color: black;
+	}
+	p>a{
+		color:gray;
+	}
+</style>
 </head>
 <body>
 <h1>메인페이지</h1>
@@ -17,6 +25,7 @@
 	</c:when>
 	<c:otherwise>
 		<p><strong><a href="${pageContext.request.contextPath }/users/mypage.do">${id }</a>님</strong>
+		<a href="${pageContext.request.contextPath }/users/private/logout.do">로그아웃</a>
 		</p>
 	</c:otherwise>
 </c:choose>

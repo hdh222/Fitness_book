@@ -36,4 +36,13 @@
 		where
 			user_nick = #{user_nick}
 	</select>
+	
+	<select id="getData" parameterType="String" resultType="usersDto">
+		select
+			*
+		from
+			users
+		where
+			user_id = #{id}
+	</select>
 </mapper>
