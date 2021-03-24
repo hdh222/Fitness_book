@@ -2,4 +2,13 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+	<!-- 별칭 -->
+	<typeAliases>
+		<typeAlias type="com.project.fitness.users.dto.UsersDto" alias="usersDto"/>
+	</typeAliases>
+	
+	<!-- Mapper -->
+	<mappers>
+		<mapper resource="com/project/fitness/mybatis/UsersMapper.xml"/>
+	</mappers>
 </configuration>
