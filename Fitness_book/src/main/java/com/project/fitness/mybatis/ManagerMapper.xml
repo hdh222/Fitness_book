@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="manager">
+	<select id="getUserList" resultType="usersDto">
+		select
+			user_id,
+			user_nick,
+			user_name,
+			user_email,
+			to_char(user_regdate, 'YYYY-MM-DD') as user_regdate
+		from
+			users
+		where
+			not user_id = 'admin1'
+		order by
+			user_regdate desc
+	</select>
+</mapper>

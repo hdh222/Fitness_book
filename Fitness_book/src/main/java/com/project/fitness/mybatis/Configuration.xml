@@ -10,5 +10,6 @@
 	<!-- Mapper -->
 	<mappers>
 		<mapper resource="com/project/fitness/mybatis/UsersMapper.xml"/>
+		<mapper resource="com/project/fitness/mybatis/ManagerMapper.xml"/>
 	</mappers>
 </configuration>
