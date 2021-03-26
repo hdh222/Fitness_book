@@ -15,4 +15,73 @@
 		order by
 			user_regdate desc
 	</select>
+	
+	<insert id="e_insert" parameterType="informationDto">
+		insert into
+			information(
+				i_num,
+				i_writer,
+				i_category,
+				i_title,
+				i_content
+			)
+		values(
+			information_seq.nextval,
+			#{i_writer},
+			#{i_category},
+			#{i_title},
+			#{i_content}
+		)	
+	</insert>
+	
+	<select id="e_getList" parameterType="informationDto" resultType="informationDto">
+		select
+			*
+		from
+			information
+		<choose>
+			<when test="i_title != null and i_category != null">
+				where
+					i_title like '%'||#{i_title}||'%'
+						or
+					i_category like '%'||#{i_category}||'%'
+			</when>
+			<when test="i_title != null">
+				where
+					i_title like '%'||#{i_title}||'%'
+			</when>
+			<when test="i_category != null">
+				where
+					i_category like '%'||#{i_category}||'%'
+			</when>
+		</choose>
+		order by
+			i_num desc
+	</select>
+	
+	<delete id="e_delete" parameterType="int">
+		delete from
+			information
+		where
+			i_num = #{i_num}
+	</delete>
+	
+	<select id="e_data" parameterType="int" resultType="informationDto">
+		select
+			*
+		from
+			information
+		where
+			i_num = #{i_num}
+	</select>
+	<update id="e_update" parameterType="informationDto">
+		update 
+			information
+		set
+			i_category = #{i_category},
+			i_title = #{i_title},
+			i_content = #{i_content}
+		where
+			i_num = #{i_num}
+	</update>
 </mapper>

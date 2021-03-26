@@ -5,6 +5,7 @@
 	<!-- 별칭 -->
 	<typeAliases>
 		<typeAlias type="com.project.fitness.users.dto.UsersDto" alias="usersDto"/>
+		<typeAlias type="com.project.fitness.manager.dto.InformationDto" alias="informationDto"/>
 	</typeAliases>
 	
 	<!-- Mapper -->
