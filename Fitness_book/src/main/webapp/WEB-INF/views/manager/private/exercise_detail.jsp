@@ -15,7 +15,14 @@
 		width: 100%;
 		height : 200px;
 	}
-	
+	.jumbotron{
+		text-align: center;
+		margin : 0px;
+		font-family: 'Gugi', cursive;
+	}
+	.navbar{
+		font-family: 'Gugi', cursive;
+	}
 </style>
 </head>
 <body>

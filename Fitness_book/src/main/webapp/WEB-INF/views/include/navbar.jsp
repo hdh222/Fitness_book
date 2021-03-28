@@ -25,12 +25,12 @@
 						<p>
 							<strong>
 								<a href="${pageContext.request.contextPath }/manager/private/member.do">
-									<img src="https://www.flaticon.com/svg/vstatic/svg/848/848043.svg?token=exp=1616817216~hmac=c085221706be9d32ef1a2245ee025b11" id="userimg" />
+									<img src="https://www.flaticon.com/svg/vstatic/svg/848/848043.svg?token=exp=1616934675~hmac=4011feb521cd71f29b25967566109e9f" id="userimg" />
 								</a>
 									<span style="margin-right:20px;">${id }님</span>
 							</strong>
 							<a href="${pageContext.request.contextPath }/manager/private/logout.do">
-								<img src="https://www.flaticon.com/svg/vstatic/svg/633/633671.svg?token=exp=1616816794~hmac=0a783f99b33e5745cbaede0365a392c0" id="logoutimg" />
+								<img src="https://www.flaticon.com/svg/vstatic/svg/3596/3596141.svg?token=exp=1616934604~hmac=94b3d8765729da152e5624378850e35a" id="logoutimg" />
 							</a>
 						</p>
 					</c:when>
@@ -38,12 +38,12 @@
 						<p>
 							<strong>
 								<a href="${pageContext.request.contextPath }/users/private/mypage.do">
-									<img src="https://www.flaticon.com/svg/vstatic/svg/848/848043.svg?token=exp=1616817216~hmac=c085221706be9d32ef1a2245ee025b11" id="userimg" />
+									<img src="https://www.flaticon.com/svg/vstatic/svg/848/848043.svg?token=exp=1616934675~hmac=4011feb521cd71f29b25967566109e9f" id="userimg" />
 								</a>
 									<span style="margin-right:20px;">${id }님</span>
 							</strong>
 							<a href="${pageContext.request.contextPath }/users/private/logout.do">
-								<img src="https://www.flaticon.com/svg/vstatic/svg/633/633671.svg?token=exp=1616816794~hmac=0a783f99b33e5745cbaede0365a392c0" id="logoutimg" />
+								<img src="https://www.flaticon.com/svg/vstatic/svg/3596/3596141.svg?token=exp=1616934604~hmac=94b3d8765729da152e5624378850e35a" id="logoutimg" />
 							</a>
 						</p>
 					</c:otherwise>

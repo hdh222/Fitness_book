@@ -17,10 +17,18 @@
 		width: 100%;
 		height : 200px;
 	}
-	
+	.jumbotron{
+		text-align: center;
+		margin : 0px;
+		font-family: 'Gugi', cursive;
+	}
+	.navbar{
+		font-family: 'Gugi', cursive;
+	}
 </style>
 </head>
 <body>
+<jsp:include page="../../include/manager_nav.jsp"></jsp:include>
 <div class="container">
 	<form action="exercise_insert.do" method="post" enctype="multipart/form-data">
 		<div class="form-group">
