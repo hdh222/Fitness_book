@@ -8,6 +8,8 @@
 <meta charset="UTF-8">
 <title>관리자 페이지 - Fitness Book</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.5.1.js"></script>
 <style>
 	#i_content{
@@ -20,7 +22,7 @@
 </head>
 <body>
 <div class="container">
-	<form action="exercise_insert.do" method="post">
+	<form action="exercise_insert.do" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="i_writer">작성자</label>
 			<input type="text" class="form-control" value="${id }" disabled/>
@@ -48,6 +50,11 @@
 			<textarea class="form-control" name="i_content" id="i_content" cols="30" rows="10"></textarea>
 		</div>
 		
+		<div class="form-group">
+			<label for="m_img">썸네일</label>
+			<input type="file" class="form-control" name="m_img" id="m_img" 
+			accept=".jpg, .jpeg, .png, .JPG, .JPEG" id="image"/>
+		</div>		
 		<button class="btn btn-outline-primary" type="submit" onclick="submitContents(this);">저장</button>
 		<button class="btn btn-outline-danger" type="reset">취소</button>
 	</form>

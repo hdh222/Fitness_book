@@ -21,7 +21,7 @@
 <body>
 <jsp:include page="../../include/manager_nav.jsp"></jsp:include>
 <div class="container">
-	<form action="exercise_update.do" method="post">
+	<form action="exercise_update.do" method="post" enctype="multipart/form-data">
 		<input type="hidden" value="${data.i_num }" name="i_num" id="i_num"/>
 		<div class="form-group">
 			<label for="i_writer">작성자</label>
@@ -50,6 +50,13 @@
 			<textarea class="form-control" name="i_content" id="i_content" cols="30" rows="10">${data.i_content }</textarea>
 		</div>
 		
+		<div class="form-group">
+			<label for="m_img">썸네일</label>
+			<input type="file" class="form-control" name="m_img" id="m_img" 
+			accept=".jpg, .jpeg, .png, .JPG, .JPEG" id="image"/>
+			<img src="${data.i_img }" alt="" />
+		</div>
+			
 		<button class="btn btn-outline-primary" type="submit" onclick="submitContents(this);">수정</button>
 		<button class="btn btn-outline-danger" type="reset" onclick="location.href='exercise.do'">목록</button>
 	</form>

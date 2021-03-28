@@ -56,13 +56,13 @@ public class ManagerController {
 	}
 	
 	@RequestMapping(value="/manager/private/exercise_insert")
-	public ModelAndView myPageExerciseInsert(InformationDto dto, HttpSession session, ModelAndView mView) {
+	public ModelAndView myPageExerciseInsert(InformationDto dto, HttpServletRequest req, ModelAndView mView) {
 		
-		String id = (String)session.getAttribute("id");
+		String id = (String)req.getSession().getAttribute("id");
 		
 		dto.setI_writer(id);
 		
-		managerService.exerciseInsert(dto);
+		managerService.exerciseInsert(dto, req);
 		
 		mView.setViewName("redirect:/manager/private/exercise.do");
 		
@@ -70,9 +70,9 @@ public class ManagerController {
 	}
 	
 	@RequestMapping(value="/manager/private/exercise_update")
-	public ModelAndView myPageExerciseUpdate(InformationDto dto, ModelAndView mView) {
+	public ModelAndView myPageExerciseUpdate(InformationDto dto, ModelAndView mView, HttpServletRequest req) {
 		
-		managerService.exerciseUpdate(dto);
+		managerService.exerciseUpdate(dto, req);
 		
 		mView.setViewName("redirect:/manager/private/exercise.do");
 		

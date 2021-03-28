@@ -1,5 +1,7 @@
 package com.project.fitness.manager.service;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.fitness.manager.dao.ManagerDao;
@@ -28,7 +31,28 @@ public class ManagerServiceImpl implements ManagerService{
 	}
 
 	@Override
-	public void exerciseInsert(InformationDto dto) {
+	public void exerciseInsert(InformationDto dto, HttpServletRequest req) {
+		
+		String orgFileName = dto.getM_img().getOriginalFilename();
+		String realPath = req.getServletContext().getRealPath("/upload");
+		String filePath = realPath+File.separator;
+		File upload = new File(filePath);
+		if(!upload.exists()) {
+			upload.mkdir();
+		}
+		String saveFileName = System.currentTimeMillis() + orgFileName;
+		
+		try {
+			dto.getM_img().transferTo(new File(filePath + saveFileName));
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		dto.setI_img("/upload/"+saveFileName);
 		
 		managerDao.exerciseInsert(dto);
 		
@@ -81,7 +105,28 @@ public class ManagerServiceImpl implements ManagerService{
 	}
 
 	@Override
-	public void exerciseUpdate(InformationDto dto) {
+	public void exerciseUpdate(InformationDto dto, HttpServletRequest req) {
+		
+		String orgFileName = dto.getM_img().getOriginalFilename();
+		String realPath = req.getServletContext().getRealPath("/upload");
+		String filePath = realPath+File.separator;
+		File upload = new File(filePath);
+		if(!upload.exists()) {
+			upload.mkdir();
+		}
+		String saveFileName = System.currentTimeMillis() + orgFileName;
+		
+		try {
+			dto.getM_img().transferTo(new File(filePath + saveFileName));
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		dto.setI_img("/upload/"+saveFileName);
 
 		managerDao.exerciseUpdate(dto);
 	}

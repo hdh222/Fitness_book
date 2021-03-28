@@ -11,8 +11,8 @@ import com.project.fitness.manager.dto.InformationDto;
 
 public interface ManagerService {
 	public void getUserList(ModelAndView mView);
-	public void exerciseInsert(InformationDto dto);
-	public void exerciseUpdate(InformationDto dto);
+	public void exerciseInsert(InformationDto dto, HttpServletRequest req);
+	public void exerciseUpdate(InformationDto dto, HttpServletRequest req);
 	public void getInfoList(ModelAndView mView, HttpServletRequest req);
 	public void exerciseDelete(int i_num);
 	public void exerciseGetData(int i_num, ModelAndView mView);

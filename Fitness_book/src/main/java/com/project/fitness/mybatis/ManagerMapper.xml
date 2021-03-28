@@ -23,14 +23,16 @@
 				i_writer,
 				i_category,
 				i_title,
-				i_content
+				i_content,
+				i_img
 			)
 		values(
 			information_seq.nextval,
 			#{i_writer},
 			#{i_category},
 			#{i_title},
-			#{i_content}
+			#{i_content},
+			#{i_img}
 		)	
 	</insert>
 	
@@ -80,7 +82,8 @@
 		set
 			i_category = #{i_category},
 			i_title = #{i_title},
-			i_content = #{i_content}
+			i_content = #{i_content},
+			i_img = #{i_img}
 		where
 			i_num = #{i_num}
 	</update>
