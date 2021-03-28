@@ -7,42 +7,44 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인 - Fitness Book</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/loginform.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 <style>
-	.form{
-		padding-top : 200px;
-		width:300px; height:160px;
-		margin: 0 auto;
+	#div-right{
+		background-image: url("../resources/images/1.jpg");
+		background-size: 100% 100%;
 	}
-	.input{
-		height:50px;
-		width:300px;
-	}
-	.login{
-		height:50px;
-		width:300px;
-	}
-	.small>a{
-		color: gray;
-		text-align: right;
+	h1{
+		font-family: 'Gugi', cursive;
 	}
 </style>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 </head>	
 <body>
-	<div class="container">
-		<div class="form text-center">
-		<h1>Fitness Book</h1>
-			<form action="login.do" method="post">
-				<div class="form-group">
-					<input type="text" class="input" id="id" name="user_id" placeholder="아이디"/>
+
+		<div class="row">
+			<div class="col-4" id="div-left">
+				<div class="form">
+				<h1>Fitness Book</h1>
+					<form action="login.do" method="post">
+						<div class="form-group">
+							<input type="text" class="form-control input" id="id" name="user_id" placeholder="아이디"/>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control input" id="pwd" name="user_pwd" placeholder="비밀번호"/>
+						</div>
+						<button class="btn" type="submit">로그인</button>
+					</form>
+					<button class="btn" id="signupbtn" onclick="location.href='signupform.do'">회원가입</button>
+					<p class="small" style="margin-left: 141px; margin-top: 15px;">
+					<a href="">아이디 찾기</a>&nbsp;|&nbsp;<a href="">비밀번호 찾기</a></p>
 				</div>
-				<div class="form-group">
-					<input type="password" class="input" id="pwd" name="user_pwd" placeholder="비밀번호"/>
-				</div>
-				<button class="login" type="submit">로그인</button>
-			</form>
-			<p class="small"><a href="">아이디 찾기</a>&nbsp;|&nbsp;<a href="">비밀번호 찾기</a></p>
+			</div>
+			<div class="col-8" id="div-right">
+				
+			</div>
 		</div>
-	</div>
+	
 </body>
 </html>

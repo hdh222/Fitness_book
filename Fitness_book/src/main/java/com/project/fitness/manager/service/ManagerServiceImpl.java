@@ -86,5 +86,18 @@ public class ManagerServiceImpl implements ManagerService{
 		managerDao.exerciseUpdate(dto);
 	}
 
+	@Override
+	public void exerciseDetail(int i_num, ModelAndView mView) {
+		
+		InformationDto dto = managerDao.getExerciseData(i_num);
+		
+		dto.setI_num(i_num);
+		
+		mView.addObject("data", dto);
+		
+	}
+
+	
+
 	
 }

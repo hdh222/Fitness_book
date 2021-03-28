@@ -7,7 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>관리자 페이지 - Fitness Book</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="${pageContext.request.contextPath }/resources/js/jquery-3.5.1.js"></script>
 <style>
 	#i_content{
 		display : none;

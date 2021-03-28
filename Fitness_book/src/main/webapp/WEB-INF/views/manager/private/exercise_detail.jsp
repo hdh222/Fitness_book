@@ -7,7 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>관리자 페이지 - Fitness Book</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="${pageContext.request.contextPath }/resources/js/jquery-3.5.1.js"></script>
 <style>
 	#i_content{
 		display : none;
@@ -18,6 +19,7 @@
 </style>
 </head>
 <body>
+<jsp:include page="../../include/manager_nav.jsp"></jsp:include>
 <div class="container">
 	<form action="exercise_update.do" method="post">
 		<input type="hidden" value="${data.i_num }" name="i_num" id="i_num"/>
@@ -49,7 +51,7 @@
 		</div>
 		
 		<button class="btn btn-outline-primary" type="submit" onclick="submitContents(this);">수정</button>
-		<button class="btn btn-outline-danger" type="reset">취소</button>
+		<button class="btn btn-outline-danger" type="reset" onclick="location.href='exercise.do'">목록</button>
 	</form>
 </div>
 

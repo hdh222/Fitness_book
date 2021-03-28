@@ -33,10 +33,9 @@
 			<c:forEach var="tmp" items="${list }">
 				<tr>
 					<td>${tmp.i_category }</td>
-					<td>${tmp.i_title }</td>
+					<td><a href="e_detail.do?i_num=${tmp.i_num }">${tmp.i_title }</a></td>
 					<td>${tmp.i_writer }</td>
 					<c:if test="${tmp.i_writer eq id }">
-						<td><a href="e_updateform.do?i_num=${tmp.i_num }">수정</a></td>
 						<td><a href="e_delete.do?i_num=${tmp.i_num }">삭제</a></td>	
 					</c:if>
 					

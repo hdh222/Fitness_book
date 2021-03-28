@@ -89,15 +89,16 @@ public class ManagerController {
 		return mView;
 	}
 	
-	@RequestMapping(value="/manager/private/e_updateform")
+	@RequestMapping(value="/manager/private/e_detail")
 	public ModelAndView myPageExerciseUpdateForm(int i_num, ModelAndView mView) {
 		
 		managerService.exerciseGetData(i_num, mView);
 		
-		mView.setViewName("manager/private/exercise_update_form");
+		mView.setViewName("manager/private/exercise_detail");
 		
 		return mView;
 	}
+
 	
 	
 	@RequestMapping(value="/manager/private/event")
@@ -115,5 +116,7 @@ public class ManagerController {
 		
 		return mView;
 	}
+	
+
 	
 }

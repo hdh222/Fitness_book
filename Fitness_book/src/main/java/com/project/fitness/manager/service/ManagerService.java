@@ -16,4 +16,5 @@ public interface ManagerService {
 	public void getInfoList(ModelAndView mView, HttpServletRequest req);
 	public void exerciseDelete(int i_num);
 	public void exerciseGetData(int i_num, ModelAndView mView);
+	public void exerciseDetail(int i_num, ModelAndView mView);
 }
