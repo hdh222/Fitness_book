@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+<beans:beans
+	xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -7,44 +8,55 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-	<beans:bean id="dataSource" 
+	<beans:bean id="dataSource"
 		class="org.springframework.jndi.JndiObjectFactoryBean">
-		<beans:property name="jndiName" value="java:comp/env/jdbc/myoracle"/>
+		<beans:property name="jndiName"
+			value="java:comp/env/jdbc/myoracle" />
 	</beans:bean>
 
-	<beans:bean id="sessionFactory" 
+	<beans:bean id="sessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
-		<beans:property name="dataSource" ref="dataSource"/>
+		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="configLocation"
-	value="classpath:com/project/fitness/mybatis/Configuration.xml"/>
+			value="classpath:com/project/fitness/mybatis/Configuration.xml" />
 	</beans:bean>
 
 	<beans:bean class="org.mybatis.spring.SqlSessionTemplate">
-		<beans:constructor-arg name="sqlSessionFactory" 
-			ref="sessionFactory"/>
+		<beans:constructor-arg name="sqlSessionFactory"
+			ref="sessionFactory" />
 	</beans:bean>
-	
 
-	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+		in the /WEB-INF/views directory -->
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
-	<context:component-scan base-package="com.project.fitness" />
-	
+
+	<context:component-scan
+		base-package="com.project.fitness" />
+
 	<!-- Multipart 폼 전송 처리를 위한 bean 설정 -->
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<beans:property name="maxUploadSize" value="102400000"/>
+		<beans:property name="maxUploadSize" value="102400000" />
 	</beans:bean>
-	
+
+	<!-- NaverLoginBO Class에 대한 Bean설정 추가 -->
+	<beans:bean id="naverLoginBO"
+		class="com.project.fitness.api.NaverLoginBO" />
+
+
 </beans:beans>

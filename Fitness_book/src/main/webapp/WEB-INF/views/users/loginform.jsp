@@ -35,6 +35,10 @@
 							<input type="password" class="form-control input" id="pwd" name="user_pwd" placeholder="비밀번호"/>
 						</div>
 						<button class="btn" type="submit">로그인</button>
+						<!-- 네이버 로그인 창으로 이동 -->
+						<div id="naver_id_login" style="text-align:center;"><a href="${url}">
+						<img width="300" src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png"/></a></div>
+						<br>
 					</form>
 					<button class="btn" id="signupbtn" onclick="location.href='signupform.do'">회원가입</button>
 					<p class="small" style="margin-left: 141px; margin-top: 15px;">
