@@ -36,12 +36,12 @@
 		float : right;=
 	}
 	#right p{
-		margin-top : 180px;
-		line-height : 150px;
+		margin-top : 240px;
+		line-height : 80px;
 		text-align : center;
 		color : black;
 		font-family: 'Gugi', cursive;
-		font-size : 20px;
+		font-size : 30px;
 	}
 	#footer{
 		width:100%;
