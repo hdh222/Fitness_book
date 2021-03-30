@@ -8,54 +8,62 @@
 <meta charset="UTF-8">
 <title>회원가입 - Fitness Book</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+<style>
+	.form-control{
+		width:500px;
+	}
+</style>
 </head>
 <body>
-	<div class="container">
-	
-	<h1 class="text-center">Fitness Book</h1>	
-		<form action="signup.do" method="post" id="signUpForm">
-			<input type="hidden" id="user_email" name="user_email"/>
-			<div class="form-group">
-				<label for="user_id">아이디</label>
-				<input type="text" class="form-control" id="id" name="user_id"/>
-				<div class="invalid-feedback">사용 할 수 없는 아이디입니다.</div>
+		<div class="container">
+		
+		<h1 class="text-center">Fitness Book</h1>
+			<div id="signform" style="margin-left:330px;">	
+			<form action="signup.do" method="post" id="signUpForm">
+				<input type="hidden" id="user_email" name="user_email"/>
+				<div class="form-group">
+					<label for="user_id">아이디</label>
+					<input type="text" class="form-control" id="id" name="user_id"/>
+					<div class="invalid-feedback">사용 할 수 없는 아이디입니다.</div>
+				</div>
+				<div class="form-group">
+					<label for="user_pwd">비밀번호</label>
+					<input type="password" class="form-control" id="user_pwd" name="user_pwd"/>
+					<div class="invalid-feedback">비밀번호가 다릅니다.</div>
+				</div>
+				<div class="form-group">
+					<label for="user_pwd2">비밀번호 확인</label>
+					<input type="password" class="form-control" id="user_pwd2" name="user_pwd2"/>
+				</div>
+				<div class="form-group">
+					<label for="user_name">이름</label>
+					<input type="text" class="form-control" id="user_name" name="user_name"/>
+				</div>
+				<div class="form-group">
+					<label for="user_nick">닉네임</label>
+					<input type="text" class="form-control" id="user_nick" name="user_nick"/>
+					<div class="invalid-feedback">사용 할 수 없는 닉네임입니다.</div>
+					<button id="checkNick">중복검색</button>
+				</div>
+				<div class="form-group">
+					<label for="user_email">이메일</label>
+					<div class="row">
+						<input type="text" class="form-control" id="email1" style="margin-left: 13px; width:240px;"/>@<input type="text" style=" width:240px;" class="form-control" id="email2"/>
+						<select name="email_address" id="email_address">
+							<option value="naver.com">naver.com</option>
+							<option value="hanmail.com">hanmail.com</option>
+							<option value="google.com">google.com</option>
+							<option value="" selected>직접입력</option>
+						</select>
+						</div>
+				</div>
+				<button class="btn btn-outline-primary" type="submit">가입</button>
+				<button class="btn btn-outline-danger" type="reset">취소</button>
+			</form>
 			</div>
-			<div class="form-group">
-				<label for="user_pwd">비밀번호</label>
-				<input type="password" class="form-control" id="user_pwd" name="user_pwd"/>
-				<div class="invalid-feedback">비밀번호가 다릅니다.</div>
-			</div>
-			<div class="form-group">
-				<label for="user_pwd2">비밀번호 확인</label>
-				<input type="password" class="form-control" id="user_pwd2" name="user_pwd2"/>
-			</div>
-			<div class="form-group">
-				<label for="user_name">이름</label>
-				<input type="text" class="form-control" id="user_name" name="user_name"/>
-			</div>
-			<div class="form-group">
-				<label for="user_nick">닉네임</label>
-				<input type="text" class="form-control" id="user_nick" name="user_nick"/>
-				<div class="invalid-feedback">사용 할 수 없는 닉네임입니다.</div>
-				<button id="checkNick">중복검색</button>
-			</div>
-			<div class="form-group">
-				<label for="user_email">이메일</label>
-				<div class="row">
-					<input type="text" class="form-control col-4" id="email1" style="margin-left: 13px;"/>@<input type="text" class="form-control col-4" id="email2"/>
-					<select name="email_address" id="email_address">
-						<option value="naver.com">naver.com</option>
-						<option value="hanmail.com">hanmail.com</option>
-						<option value="google.com">google.com</option>
-						<option value="" selected>직접입력</option>
-					</select>
-					</div>
-			</div>
-			<button class="btn btn-outline-primary" type="submit">가입</button>
-			<button class="btn btn-outline-danger" type="reset">취소</button>
-		</form>
-	</div>
-	
+		</div>
 	<script src="${pageContext.request.contextPath }/resources/js/jquery-3.5.1.js"></script>
 	<script>
 		var reg_id = /^[a-z].{4,9}$/;
